@@ -238,6 +238,13 @@
             #binding-cells = <0>;
             bindings = <&hwp_uni_1 0 0>, <&MC_uni_mdot>;
         };
+
+        td_media: td_media {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MEDIA";
+            #binding-cells = <0>;
+            bindings = <&ht C_PP C_NEXT>, <&kp C_PREV>;
+        };
     };
 
     conditional_layers {
@@ -555,10 +562,10 @@
 
         hwp_layer {
             bindings = <
-&kp BACKSPACE   &td_hwp_1     &td_hwp_2      &td_hwp_3  &none                 &none                    &none            &none  &none  &none           &none           &none
-&td_0           &kp SQT       &td_1          &kp MINUS  &kp TILDE             &none                    &none            &none  &none  &none           &none           &none
-&kp LEFT_SHIFT  &td_hwp_0     &td_hwp_4      &none      &none                 &none      &none  &none  &none            &none  &none  &none           &kp UP_ARROW    &kp DEL
-&kp LCTRL       &kp LEFT_GUI  &kp RIGHT_ALT  &mo 7      &mt LEFT_SHIFT SPACE  &kp ENTER                &kp RIGHT_SHIFT  &none  &mo 8  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp BACKSPACE         &td_hwp_1     &td_hwp_2      &td_hwp_3  &none                 &none                               &none            &none  &none  &none           &none           &none
+&td_0                 &kp SQT       &td_1          &kp MINUS  &kp TILDE             &none                               &none            &none  &none  &none           &none           &none
+&mt LEFT_SHIFT ENTER  &td_hwp_0     &td_hwp_4      &none      &none                 &none                 &none  &none  &none            &none  &none  &none           &kp UP_ARROW    &kp DEL
+&kp LCTRL             &kp LEFT_GUI  &kp RIGHT_ALT  &mo 7      &mt LEFT_SHIFT SPACE  &mt LEFT_SHIFT SPACE                &kp RIGHT_SHIFT  &mo 4  &mo 8  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -606,10 +613,10 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4   &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
-&trans  &kp N5  &kp N4  &kp N3  &kp N2   &kp N1                         &kp BSPC  &kp MINUS  &kp EQUAL  &kp PLUS  &kp DQT  &kp F12
-&trans  &kp N6  &kp N7  &kp N8  &kp N9   &kp N0         &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &trans   &trans
-&none   &none   &none   &trans  &kp TAB  &kp BACKSPACE                  &trans    &trans     &kp N3     &none     &none    &none
+&trans  &kp F1  &kp F2     &kp F3  &kp F4   &kp F5                         &kp F6    &kp F7     &kp F8     &kp F9    &kp F10  &kp F11
+&trans  &kp N5  &kp N4     &kp N3  &kp N2   &kp N1                         &kp BSPC  &kp MINUS  &kp EQUAL  &kp PLUS  &kp DQT  &kp F12
+&trans  &kp N6  &kp N7     &kp N8  &kp N9   &kp N0         &trans  &trans  &kp TAB   &kp INS    &kp HOME   &kp END   &trans   &trans
+&none   &none   &td_media  &trans  &kp TAB  &kp BACKSPACE                  &trans    &trans     &kp N3     &none     &none    &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -618,10 +625,10 @@
         KeyPad_layer {
             display-name = "NumPad";
             bindings = <
-&kp ESCAPE  &kp TILDE  &kp N7  &kp N8  &kp N9  &kp SEMICOLON                  &none      &none    &none      &none     &none     &kp DEL
-&none       &td_hwp_0  &kp N4  &kp N5  &kp N6  &kp MINUS                      &kp EQUAL  &kp SQT  &none      &none     &none     &none
-&kp LSHFT   &kp N0     &kp N1  &kp N2  &kp N3  &none          &trans  &trans  &none      &none    &kp COMMA  &kp DOT   &kp UP    &kp FSLH
-&kp LCTRL   &none      &kp N0  &none   &none   &mo 2                          &kp RSHFT  &none    &none      &kp LEFT  &kp DOWN  &kp RIGHT
+&kp ESCAPE  &kp TILDE  &kp N7  &kp N8  &kp N9     &kp SEMICOLON                  &none      &none    &none      &none     &none     &kp DEL
+&none       &td_hwp_0  &kp N4  &kp N5  &kp N6     &kp MINUS                      &kp EQUAL  &kp SQT  &none      &none     &none     &none
+&kp LSHFT   &kp N0     &kp N1  &kp N2  &kp N3     &none          &trans  &trans  &none      &none    &kp COMMA  &kp DOT   &kp UP    &kp FSLH
+&kp LCTRL   &none      &kp N0  &none   &td_media  &mo 2                          &kp RSHFT  &none    &none      &kp LEFT  &kp DOWN  &kp RIGHT
             >;
         };
 
