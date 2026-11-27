@@ -625,10 +625,10 @@
         KeyPad_layer {
             display-name = "NumPad";
             bindings = <
-&kp ESCAPE  &kp TILDE  &kp N7  &kp N8  &kp N9     &kp SEMICOLON                  &none      &none    &none      &none     &none     &kp DEL
-&none       &td_hwp_0  &kp N4  &kp N5  &kp N6     &kp MINUS                      &kp EQUAL  &kp SQT  &none      &none     &none     &none
-&kp LSHFT   &kp N0     &kp N1  &kp N2  &kp N3     &none          &trans  &trans  &none      &none    &kp COMMA  &kp DOT   &kp UP    &kp FSLH
-&kp LCTRL   &none      &kp N0  &none   &td_media  &mo 2                          &kp RSHFT  &none    &none      &kp LEFT  &kp DOWN  &kp RIGHT
+&kp ESCAPE  &kp TILDE  &kp N7  &kp N8  &kp N9     &kp SEMICOLON                  &none      &none    &none      &kp INSERT  &kp HOME  &kp PAGE_UP
+&none       &td_hwp_0  &kp N4  &kp N5  &kp N6     &kp MINUS                      &kp EQUAL  &kp SQT  &none      &kp DELETE  &kp END   &kp PAGE_DOWN
+&kp LSHFT   &kp N0     &kp N1  &kp N2  &kp N3     &none          &trans  &trans  &none      &none    &kp COMMA  &kp DOT     &kp UP    &kp FSLH
+&kp LCTRL   &none      &kp N0  &none   &td_media  &mo 2                          &kp RSHFT  &none    &none      &kp LEFT    &kp DOWN  &kp RIGHT
             >;
         };
 
